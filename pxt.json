@@ -1,0 +1,17 @@
+{
+    "name": "minode",
+    "version": "0.0.0",
+    "description": "Micro:bit Accessories - MiNode Kit driver libraries",
+    "license": "MIT",
+    "dependencies": {
+        "microbit": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}
