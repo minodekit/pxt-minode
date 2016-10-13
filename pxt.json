@@ -4,7 +4,9 @@
     "description": "Micro:bit Accessories - MiNode Kit driver libraries",
     "license": "MIT",
     "dependencies": {
-        "microbit": "*"
+        "core": "*",
+        "radio": "*",
+        "minode-core": "github:minodekit/pxt-minode-core#master"
     },
     "files": [
         "README.md",
