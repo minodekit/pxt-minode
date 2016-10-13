@@ -14,7 +14,10 @@
         "extension.cpp",
         "extension.ts",
         "shims.d.ts",
-        "enums.d.ts"
+        "enums.d.ts",
+        "MiNodeCore.h",
+        "MiNodeSwitch.h",
+        "MiNodeSwitch.cpp"
     ],
     "testFiles": [
         "tests.ts"
