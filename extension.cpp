@@ -18,13 +18,11 @@ namespace minode {
    * @param event Event to listen
    */
 
-  //% blockId=device_on_switch_event block="switch %SwitchId| connected to %connName |on %event"
+  //% blockId=device_on_switch_event block="switch %switchId| connected to %connName |on %event"
   //% icon="\uf192"
   void onSwitchEvent(SwitchName switchId, ConnName connName, SwitchEvent event, Action body) {
 
     MiNodeSwitch switchModule((int)switchId, connName);
-
-    switchModule.eventOn(event);
 
     registerWithDal((int)switchId, event, body);
 

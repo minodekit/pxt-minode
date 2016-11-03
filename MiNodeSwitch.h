@@ -31,12 +31,7 @@ public:
   MiNodeSwitch(int id, ConnName connName);
   MiNodeSwitch(int id, PinName pinName);
 
-  void eventOn(int eventType);
-
   int isOpened();
-
-
-
 
 private:
   InterruptIn pin;

@@ -7,7 +7,7 @@ declare namespace minode {
      * @param connName MiNode Connector Name
      * @param event Event to listen
      */
-    //% blockId=device_on_switch_event block="switch %SwitchId| connected to %connName |on %event"
+    //% blockId=device_on_switch_event block="switch %switchId| connected to %connName |on %event"
     //% icon="\uf192" shim=minode::onSwitchEvent
     function onSwitchEvent(switchId: SwitchName, connName: ConnName, event: SwitchEvent, body: () => void): void;
 

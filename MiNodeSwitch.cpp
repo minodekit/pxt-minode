@@ -15,6 +15,8 @@ pin(MiNodeConn::calcP0Name(connName))
 {
   this->id = id;
   pin.mode(PullNone);
+  pin.rise(this, &MiNodeSwitch::onOpen);
+  pin.fall(this, &MiNodeSwitch::onClose);
 }
 
 MiNodeSwitch::MiNodeSwitch(int id, PinName pinName) :
@@ -22,18 +24,8 @@ pin(pinName)
 {
   this->id = id;
   pin.mode(PullNone);
-}
-
-void MiNodeSwitch::eventOn(int eventType)
-{
-  switch(eventType) {
-    case MINODE_SWITCH_EVT_OPEN:
-      pin.rise(this, &MiNodeSwitch::onOpen);
-      break;
-    case MINODE_SWITCH_EVT_CLOSE:
-      pin.fall(this, &MiNodeSwitch::onClose);
-      break;
-  }
+  pin.rise(this, &MiNodeSwitch::onOpen);
+  pin.fall(this, &MiNodeSwitch::onClose);
 }
 
 void MiNodeSwitch::onOpen()
