@@ -10,7 +10,6 @@ using namespace pxt;
 
 namespace minode {
 
-
   /**
    * Do something when a switch (``A``, ``B``, ``C``, ``D``, ``E``) is opened /closed
    * @param switchId a switch ID .
@@ -22,7 +21,7 @@ namespace minode {
   //% icon="\uf192"
   void onSwitchEvent(SwitchName switchId, ConnName connName, SwitchEvent event, Action body) {
 
-    MiNodeSwitch switchModule((int)switchId, connName);
+    static MiNodeSwitch switchModule((int)switchId, connName);
 
     registerWithDal((int)switchId, event, body);
 
@@ -39,7 +38,7 @@ namespace minode {
 
     int isOpened;
 
-    MiNodeSwitch a((int)switchId, connName);
+    static MiNodeSwitch a((int)switchId, connName);
     isOpened = a.isOpened();
 
     return isOpened ? true : false;

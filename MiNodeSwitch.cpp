@@ -1,15 +1,5 @@
 #include "MiNodeSwitch.h"
 
-namespace minode {
-
-    //%
-  int extfun_switch(int x, int y) {
-      return x + y;
-  }
-
-
-}
-
 MiNodeSwitch::MiNodeSwitch(int id, ConnName connName) :
 pin(MiNodeConn::calcP0Name(connName))
 {
