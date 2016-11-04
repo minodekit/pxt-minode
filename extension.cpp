@@ -1,45 +1,46 @@
 #include "pxt.h"
-#include "MiNodeSwitch.h"
-#include "MiNodeCore.h"
-
-
+#include "MiNode.h"
 
 
 using namespace pxt;
 
+MiNode node;
 
 namespace minode {
 
   /**
-   * Do something when a switch (``A``, ``B``, ``C``, ``D``, ``E``) is opened /closed
+   * Do something when a switch is opened /closed
    * @param switchId a switch ID .
    * @param connName MiNode Connector Name
    * @param event Event to listen
    */
 
-  //% blockId=device_on_switch_event block="switch %switchId| connected to %connName |on %event"
+  //% blockId=device_on_switch_event block="switch %connName| on %event"
   //% icon="\uf192"
-  void onSwitchEvent(SwitchName switchId, ConnName connName, SwitchEvent event, Action body) {
+  void onSwitchEvent(ConnName connName, SwitchEvent event, Action body) {
+    int id;
+    MiNodeSwitch* pSwitch;
 
-    static MiNodeSwitch switchModule((int)switchId, connName);
+    pSwitch = node.switches.attach(connName);
+    id = pSwitch->getId();
 
-    registerWithDal((int)switchId, event, body);
-
+    registerWithDal(id, event, body);
   }
 
 
   /**
-   * Get the button state (pressed or not) for ``A`` and ``B``.
+   * Get the switch state (open or not).
    */
 
-  //% blockId=device_switch_is_opened block="switch %SwitchId| connected to %connName| is opened"
+  //% blockId=device_switch_is_opened block="switch %connName| is opened"
 
-  bool switchIsOened(SwitchName switchId, ConnName connName) {
+  bool switchIsOened(ConnName connName) {
 
+    MiNodeSwitch* pSwitch;
     int isOpened;
 
-    static MiNodeSwitch a((int)switchId, connName);
-    isOpened = a.isOpened();
+    pSwitch = node.switches.attach(connName);
+    isOpened = pSwitch->isOpened();
 
     return isOpened ? true : false;
   }

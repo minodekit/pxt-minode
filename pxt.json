@@ -5,8 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "minode-core": "github:minodekit/pxt-minode-core#master"
+        "radio": "*"
     },
     "files": [
         "README.md",
@@ -15,7 +14,14 @@
         "extension.ts",
         "shims.d.ts",
         "enums.d.ts",
-        "MiNodeCore.h",
+        "MiNodeConn.h",
+        "MiNodeConn.cpp",
+        "MiNodeComponent.h",
+        "MiNodeComponent.cpp",
+        "MiNodeModulePool.h",
+        "MiNodeIO.h",
+        "MiNodeIO.cpp",
+        "MiNode.h",
         "MiNodeSwitch.h",
         "MiNodeSwitch.cpp"
     ],

@@ -1,34 +1,59 @@
 #include "MiNodeSwitch.h"
 
-MiNodeSwitch::MiNodeSwitch(int id, ConnName connName) :
-pin(MiNodeConn::calcP0Name(connName))
+
+MiNodeSwitch::MiNodeSwitch() :
+pin(NULL)
 {
-  this->id = id;
-  pin.mode(PullNone);
-  pin.rise(this, &MiNodeSwitch::onOpen);
-  pin.fall(this, &MiNodeSwitch::onClose);
+  this->baseId = MINODE_ID_MODULE_SWITCH;
 }
 
-MiNodeSwitch::MiNodeSwitch(int id, PinName pinName) :
-pin(pinName)
+
+MiNodeSwitch::~MiNodeSwitch()
 {
-  this->id = id;
-  pin.mode(PullNone);
-  pin.rise(this, &MiNodeSwitch::onOpen);
-  pin.fall(this, &MiNodeSwitch::onClose);
+  if(pin) {
+    delete pin;
+  }
+}
+
+void MiNodeSwitch::attach(ConnName connName)
+{
+  if(this->cn != MN_NC) {
+    return;
+  }
+
+  MiNodeComponent::initConnector(connName);
+  eventOn();
+}
+
+
+void MiNodeSwitch::eventOn()
+{
+  PinName pinName = MiNodeConn::calcP0Name(this->cn);
+  if(pin) {
+    delete pin;
+  }
+  pin = new InterruptIn(pinName);
+
+  pin->mode(PullNone);
+  pin->rise(this, &MiNodeSwitch::onOpen);
+  pin->fall(this, &MiNodeSwitch::onClose);
 }
 
 void MiNodeSwitch::onOpen()
 {
-  MicroBitEvent(id, MINODE_SWITCH_EVT_OPEN);
+  MicroBitEvent(this->baseId + this->id, MINODE_SWITCH_EVT_OPEN);
 }
 
 void MiNodeSwitch::onClose()
 {
-  MicroBitEvent(id, MINODE_SWITCH_EVT_CLOSE);
+  MicroBitEvent(this->baseId + this->id, MINODE_SWITCH_EVT_CLOSE);
 }
 
 int MiNodeSwitch::isOpened()
 {
-  return pin.read();
+  int status = 0;
+  if(pin) {
+    status = pin->read();
+  }
+  return status;
 }

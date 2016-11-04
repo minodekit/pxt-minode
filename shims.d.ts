@@ -2,20 +2,20 @@
 declare namespace minode {
 
     /**
-     * Do something when a switch (``A``, ``B``, ``C``, ``D``, ``E``) is opened /closed
+     * Do something when a switch is opened /closed
      * @param switchId a switch ID .
      * @param connName MiNode Connector Name
      * @param event Event to listen
      */
-    //% blockId=device_on_switch_event block="switch %switchId| connected to %connName |on %event"
+    //% blockId=device_on_switch_event block="switch %connName| on %event"
     //% icon="\uf192" shim=minode::onSwitchEvent
-    function onSwitchEvent(switchId: SwitchName, connName: ConnName, event: SwitchEvent, body: () => void): void;
+    function onSwitchEvent(connName: ConnName, event: SwitchEvent, body: () => void): void;
 
     /**
-     * Get the button state (pressed or not) for ``A`` and ``B``.
+     * Get the switch state (open or not).
      */
-    //% blockId=device_switch_is_opened block="switch %SwitchId| connected to %connName| is opened" shim=minode::switchIsOened
-    function switchIsOened(switchId: SwitchName, connName: ConnName): boolean;
+    //% blockId=device_switch_is_opened block="switch %connName| is opened" shim=minode::switchIsOened
+    function switchIsOened(connName: ConnName): boolean;
 }
 
 // Auto-generated. Do not edit. Really.
