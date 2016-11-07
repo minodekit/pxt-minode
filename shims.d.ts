@@ -24,10 +24,16 @@ declare namespace minode {
     function FanControl(connName: ConnName, status: FanStatus): void;
 
     /**
-     * Get the temperature (celsius or fahrenheit).
+     * Get DHT11 temperature (celsius or fahrenheit).
      */
     //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus" shim=minode::DHTGetTemperature
     function DHTGetTemperature(connName: ConnName, style: DHTTemStyle): number;
+
+    /**
+     * Get DHT11 Humidity.
+     */
+    //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity" shim=minode::DHTGetHumidity
+    function DHTGetHumidity(connName: ConnName): number;
 }
 
 // Auto-generated. Do not edit. Really.

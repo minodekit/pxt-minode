@@ -96,7 +96,7 @@ namespace minode {
    * Get DHT11 Humidity.
    */
 
-  //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| tempreature"
+  //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity"
 
   int DHTGetHumidity(ConnName connName)
   {
