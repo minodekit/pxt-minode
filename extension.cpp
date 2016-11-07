@@ -146,7 +146,7 @@ namespace minode {
    * Do something when Rotary change
    */
 
-  //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
+  //% blockId=device_on_ROTARY_CHANGE block="RotaRY %connName| on trigger"
   void onRotaryEvent(ConnName connName, Action body) {
     int id;
     MiNodeRotary* pRotary;

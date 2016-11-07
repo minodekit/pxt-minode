@@ -50,7 +50,7 @@ declare namespace minode {
     /**
      * Do something when Rotary change
      */
-    //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onRotaryEvent
+    //% blockId=device_on_ROTARY_CHANGE block="RotaRY %connName| on trigger" shim=minode::onRotaryEvent
     function onRotaryEvent(connName: ConnName, body: () => void): void;
 }
 
