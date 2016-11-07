@@ -44,7 +44,7 @@ void MiNodeRotary::systemTick()
     {
       if ((getADValue() - currentAD > 31) || (getADValue() - currentAD < -31))
       {
-        MicroBitEvent evt(MINODE_ID_MODULE_ROTARY,MINODE_ROTARY_EVT_CHANGE);
+        MicroBitEvent evt(this->baseId + this->id,MINODE_ROTARY_EVT_CHANGE);
         currentAD = getADValue();
       }
     }
