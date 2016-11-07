@@ -67,4 +67,29 @@ namespace minode {
     }
   }
 
+    /**
+   * Get the temperature (cslsius or fahrenheit).
+   */
+
+  //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus"
+
+  int DHTGetTemperature(ConnName connName , DHTTemStyle style)
+  {
+    MiNodeDHT* pDHT11;
+    int dht_tempreature=0;
+
+    pDHT11 = node.dht11.attach(connName);
+
+    switch(style) {
+      case MINODE_DHT_CELSIUS:
+          dht_tempreature = pDHT11->getTemperature();
+        break;
+      case MINODE_FAN_FAHRENHEIT:
+          dht_tempreature = pDHT11->getFahrenheitTemperature();
+        break;
+    }
+
+    return dht_tempreature;
+  }
+
 }

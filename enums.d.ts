@@ -34,4 +34,12 @@ MINODE_FAN_OPEN = 1,
 MINODE_FAN_CLOSE = 2,
 }
 
+declare enum DHTTemStyle
+{
+//% blockId="MINODE_DHT_CELSIUS" block="Celsius"
+MINODE_DHT_CELSIUS = 1,
+//% blockId="MINODE_FAN_FAHRENHEIT" block="Fahrenheit"
+MINODE_FAN_FAHRENHEIT = 2,
+}
+
 // Auto-generated. Do not edit. Really.

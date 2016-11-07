@@ -14,6 +14,7 @@
 #include "MiNodeModulePool.h"
 #include "MiNodeSwitch.h"
 #include "MiNodeFan.h"
+#include "MiNodeDHT11.h"
 
 
 class MiNode
@@ -34,6 +35,7 @@ public:
   MiNodeIO io;
   MiNodeModulePool<MiNodeSwitch> switches;
   MiNodeModulePool<MiNodeFan>    fan;
+  MiNodeModulePool<MiNodeDHT>    dht11;
 };
 
 #endif

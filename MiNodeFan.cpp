@@ -18,27 +18,23 @@ void MiNodeFan::attach(ConnName connName)
   if(this->cn != MN_NC) {
     return;
   }
+  
+  PinName pinName = MiNodeConn::calcP0Name(this->cn);
+  if(pin) {
+    delete pin;
+  }
+  pin = new DigitalOut(pinName);
 
   MiNodeComponent::initConnector(connName);
 }
 
 void MiNodeFan::fanOpen()
 {
-  PinName pinName = MiNodeConn::calcP0Name(this->cn);
-  if(pin) {
-    delete pin;
-  }
-  pin = new DigitalOut(pinName);
 	pin->write(1);
 }
 
 void MiNodeFan::fanClose()
 {
-  PinName pinName = MiNodeConn::calcP0Name(this->cn);
-  if(pin) {
-    delete pin;
-  }
-  pin = new DigitalOut(pinName);
 	pin->write(0);
 }
 
