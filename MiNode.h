@@ -16,6 +16,7 @@
 #include "MiNodeFan.h"
 #include "MiNodeDHT11.h"
 #include "MiNodePIR.h"
+#include "MiNodeRotary.h"
 
 
 class MiNode
@@ -34,10 +35,11 @@ public:
   }
 
   MiNodeIO io;
-  MiNodeModulePool<MiNodeSwitch> switches;
-  MiNodeModulePool<MiNodeFan>    fan;
-  MiNodeModulePool<MiNodeDHT>    dht11;
-  MiNodeModulePool<MiNodePIR>    pir;
+  MiNodeModulePool<MiNodeSwitch>   switches;
+  MiNodeModulePool<MiNodeFan>      fan;
+  MiNodeModulePool<MiNodeDHT>      dht11;
+  MiNodeModulePool<MiNodePIR>      pir;
+  MiNodeModulePool<MiNodeRotary>   rotary;
 
 };
 

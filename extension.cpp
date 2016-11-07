@@ -142,4 +142,19 @@ namespace minode {
     return triggered ? true : false;
   }
 
+  /**
+   * Do something when Rotary change
+   */
+
+  //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
+  void onRotaryEvent(ConnName connName, Action body) {
+    int id;
+    MiNodeRotary* pRotary;
+
+    pRotary = node.rotary.attach(connName);
+    id = pRotary->getId();
+
+    registerWithDal(id, MINODE_ROTARY_EVT_CHANGE, body);
+  }
+
 }

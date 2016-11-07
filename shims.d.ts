@@ -46,6 +46,12 @@ declare namespace minode {
      */
     //% blockId=device_PIR_istrig block="switch %connName| is triggered" shim=minode::PIRIsTriggered
     function PIRIsTriggered(connName: ConnName): boolean;
+
+    /**
+     * Do something when Rotary change
+     */
+    //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onRotaryEvent
+    function onRotaryEvent(connName: ConnName, body: () => void): void;
 }
 
 // Auto-generated. Do not edit. Really.
