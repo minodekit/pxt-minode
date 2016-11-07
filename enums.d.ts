@@ -26,4 +26,12 @@ MINODE_SWITCH_EVT_OPEN = 1,
 MINODE_SWITCH_EVT_CLOSE = 2,
 }
 
+declare enum FanStatus
+{
+//% blockId="MINODE_FAN_OPEN" block="Open"
+MINODE_FAN_OPEN = 1,
+//% blockId="MINODE_FAN_CLOSE" block="Close"
+MINODE_FAN_CLOSE = 2,
+}
+
 // Auto-generated. Do not edit. Really.

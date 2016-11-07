@@ -45,6 +45,9 @@ namespace minode {
     return isOpened ? true : false;
   }
 
+  /**
+   * Control the mini Fan (open or close).
+   */
 
   //% blockId=device_fan_control block="fan %connName| is %FanStatus"
 

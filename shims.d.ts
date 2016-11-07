@@ -16,6 +16,12 @@ declare namespace minode {
      */
     //% blockId=device_switch_is_opened block="switch %connName| is opened" shim=minode::switchIsOened
     function switchIsOened(connName: ConnName): boolean;
+
+    /**
+     * Control the mini Fan (open or close).
+     */
+    //% blockId=device_fan_control block="fan %connName| is %FanStatus" shim=minode::FanControl
+    function FanControl(connName: ConnName, status: FanStatus): void;
 }
 
 // Auto-generated. Do not edit. Really.
