@@ -40,6 +40,12 @@ declare namespace minode {
      */
     //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onPIREvent
     function onPIREvent(connName: ConnName, body: () => void): void;
+
+    /**
+     * Get the PIR state (trigger or not).
+     */
+    //% blockId=device_PIR_istrig block="switch %connName| is triggered" shim=minode::PIRIsTriggered
+    function PIRIsTriggered(connName: ConnName): boolean;
 }
 
 // Auto-generated. Do not edit. Really.

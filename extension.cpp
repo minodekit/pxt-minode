@@ -126,4 +126,20 @@ namespace minode {
     registerWithDal(id, MINODE_PIR_EVT_TRIG, body);
   }
 
+  /**
+ * Get the PIR state (trigger or not).
+ */
+
+  //% blockId=device_PIR_istrig block="switch %connName| is triggered"
+  bool PIRIsTriggered(ConnName connName) {
+
+    MiNodePIR* pPir;
+    int triggered;
+
+    pPir = node.pir.attach(connName);
+    triggered = pPir->isTriged();
+
+    return triggered ? true : false;
+  }
+
 }
