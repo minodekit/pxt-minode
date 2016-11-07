@@ -110,4 +110,20 @@ namespace minode {
     return dht_humidity;
   }
 
+
+  /**
+   * Do something when PIR triggered
+   */
+
+  //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
+  void onPIREvent(ConnName connName, Action body) {
+    int id;
+    MiNodePIR* pPir;
+
+    pPir = node.pir.attach(connName);
+    id = pPir->getId();
+
+    registerWithDal(id, MINODE_PIR_EVT_TRIG, body);
+  }
+
 }

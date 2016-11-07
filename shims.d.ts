@@ -34,6 +34,12 @@ declare namespace minode {
      */
     //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity" shim=minode::DHTGetHumidity
     function DHTGetHumidity(connName: ConnName): number;
+
+    /**
+     * Do something when PIR triggered
+     */
+    //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onPIREvent
+    function onPIREvent(connName: ConnName, body: () => void): void;
 }
 
 // Auto-generated. Do not edit. Really.

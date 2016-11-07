@@ -27,7 +27,9 @@
         "MiNodeFan.h",
         "MiNodeFan.cpp",
         "MiNodeDHT11.h",
-        "MiNodeDHT11.cpp"
+        "MiNodeDHT11.cpp",
+        "MiNodePIR.h",
+        "MiNodePIR.cpp"
     ],
     "testFiles": [
         "tests.ts"
