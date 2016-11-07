@@ -45,4 +45,23 @@ namespace minode {
     return isOpened ? true : false;
   }
 
+
+  //% blockId=device_fan_control block="fan %connName| is %FanStatus"
+
+  void FanControl(ConnName connName , FanStatus status)
+  {
+    MiNodeFan* pFan;
+
+    pFan = node.fan.attach(connName);
+
+    switch(status) {
+      case MINODE_FAN_OPEN:
+          pFan->fanOpen();
+        break;
+      case MINODE_FAN_CLOSE:
+          pFan->fanClose();
+        break;
+    }
+  }
+
 }
