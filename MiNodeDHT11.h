@@ -37,7 +37,6 @@ t++;t++;t++;t++;t++;t++;t++;t++;t++;t++;\
 
 class MiNodeDHT : public MiNodeComponent
 {
-    
   public:
     MiNodeDHT();
 

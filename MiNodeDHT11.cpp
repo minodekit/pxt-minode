@@ -22,13 +22,12 @@ void MiNodeDHT::attach(ConnName connName)
     return;
   }
 
+  MiNodeComponent::initConnector(connName);
   PinName pinName = MiNodeConn::calcP0Name(this->cn);
   if(pin) {
     delete pin;
   }
   pin = new DigitalInOut(pinName);
-
-  MiNodeComponent::initConnector(connName);
 }
 
 void MiNodeDHT::dhtSet(int level)
