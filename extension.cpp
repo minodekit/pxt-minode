@@ -68,7 +68,7 @@ namespace minode {
   }
 
     /**
-   * Get the temperature (celsius or fahrenheit).
+   * Get DHT11 temperature (celsius or fahrenheit).
    */
 
   //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus"
@@ -90,6 +90,24 @@ namespace minode {
     }
 
     return dht_tempreature;
+  }
+
+  /**
+   * Get DHT11 Humidity.
+   */
+
+  //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| tempreature"
+
+  int DHTGetHumidity(ConnName connName)
+  {
+    MiNodeDHT* pDHT11;
+    int dht_humidity=0;
+
+    pDHT11 = node.dht11.attach(connName);
+
+    dht_humidity = pDHT11->getHumidity();
+
+    return dht_humidity;
   }
 
 }
