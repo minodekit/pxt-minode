@@ -1,6 +1,6 @@
 {
     "name": "minode",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "micro:bit Accessories - Mi:Node kit driver package for PXT/microbit",
     "license": "MIT",
     "dependencies": {
