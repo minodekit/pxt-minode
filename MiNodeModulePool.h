@@ -50,6 +50,27 @@ public:
     return findModule;
   }
 
+  T* attach(AnalogConnName conn) {
+
+    typename std::vector<T*>::iterator it;
+    T* findModule = NULL;
+    for(it = modules.begin(); it != modules.end(); it++) {
+      T* pModule = *it;
+      if(conn == pModule->AgetConnector()) {
+        findModule = pModule;
+        break;
+      }
+    }
+
+    if(findModule == NULL) {
+      findModule = new T();
+      findModule->attach(conn);
+      modules.push_back(findModule);
+    }
+
+    return findModule;
+  }
+
 private:
   std::vector<T*> modules;
 

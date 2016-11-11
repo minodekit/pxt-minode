@@ -54,13 +54,16 @@ public:
   ~MiNodeComponent();
 
   ConnName getConnector();
+  AnalogConnName AgetConnector();
   int getId();
 
 protected:
 
   void initConnector(ConnName connName);
+  void initAConnector(AnalogConnName connName);
 
   ConnName cn;
+  AnalogConnName cna;
   int baseId;
 };
 

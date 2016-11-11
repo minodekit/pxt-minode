@@ -23,7 +23,21 @@
         "MiNodeIO.cpp",
         "MiNode.h",
         "MiNodeSwitch.h",
-        "MiNodeSwitch.cpp"
+        "MiNodeSwitch.cpp",
+        "MiNodeFan.h",
+        "MiNodeFan.cpp",
+        "MiNodeDHT11.h",
+        "MiNodeDHT11.cpp",
+        "MiNodePIR.h",
+        "MiNodePIR.cpp",
+        "MiNodeRotary.h",
+        "MiNodeRotary.cpp",
+        "MiNodeLightSensor.h",
+        "MiNodeLightSensor.cpp",
+        "MiNodeMIC.h",
+        "MiNodeMIC.cpp",
+        "MiNodeRGB.h",
+        "MiNodeRGB.cpp"
     ],
     "testFiles": [
         "tests.ts"
