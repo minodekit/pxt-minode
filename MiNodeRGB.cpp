@@ -110,7 +110,7 @@ void MiNodeRGB::rgbWrite(uint8_t r,uint8_t g,uint8_t b)
   g>>=1;
   b>>=1;
 
-  rgb |= (r << 15) | (g << 7) | (b << 0);
+  rgb |= (g << 15) | (r << 7) | (b << 0);
 
   rgbClockWrite(0); //P15
   rgbDataWrite(0);  //P16
