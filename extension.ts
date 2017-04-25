@@ -20,6 +20,7 @@ namespace minode {
      * relay control(open / close)
      */
     //% blockId=device_relay_control block="relay %connName| set %status"
+    //% advanced=true
     export function RelayControl(connName:ConnName , status:FanStatus): void
     {
       if(getPinProperty(connName) == 1)
