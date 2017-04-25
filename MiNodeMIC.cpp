@@ -54,22 +54,22 @@ void MiNodeMIC::systemTick()
   }
 }
 
-int MiNodeMIC::getADvalue()
+unsigned int MiNodeMIC::getADvalue()
 {
-  int temp=0;
+  unsigned int temp=0;
 
-  for (int i = 0; i < 3; ++i)
+  for (int i = 0; i < 2; ++i)
   {
     temp+=pin->read_u16();
   }
-  temp /= 3;
+  temp /= 2;
 
   return temp;
 }
 
 int MiNodeMIC::getMicLevel()
 {
-  int temp=0;
+  unsigned int temp=0;
   temp = getADvalue();
 
   if ((temp > MICROBIT_MIC_MIN) && (temp < MICROBIT_MIC_LEVEL_A+1))
