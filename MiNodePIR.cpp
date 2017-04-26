@@ -34,11 +34,14 @@ int MiNodePIR::isTriged()
 {
   int temp=0;
   int i;
-  for (int i = 0; i < 1000; ++i)
+  for (int i = 0; i < 10; ++i)
   {
-    temp += readPir();
+    if (readPir() != 0)
+    {
+      temp += 1;
+    }
   }
-  if(temp > 900)
+  if(temp > 8)
     return 1;
   else
     return 0;
