@@ -56,13 +56,13 @@ void MiNodeMIC::systemTick()
 
 unsigned int MiNodeMIC::getADvalue()
 {
-  unsigned int temp=0;
+  unsigned long temp=0;
 
-  for (int i = 0; i < 2; ++i)
+  for (int i = 0; i < 32; ++i)
   {
     temp+=pin->read_u16();
   }
-  temp /= 2;
+  temp >>= 5;
 
   return temp;
 }
