@@ -7,10 +7,16 @@ MiNode node;
 
 namespace minode {
 
+  // For simulator,do nothing.
+  void MinodeShim(void){
+    // Nothing to do!
+  }
+
   /**
    * Get pinname
    */
   //% blockId=get_pin_name
+  //% shim=minode::MinodeShim
   int getPin(ConnName connName)
   {
     int temp=0;
@@ -52,6 +58,7 @@ namespace minode {
    * Get analog pinname
    */
   //% blockId=get_analog_pin_name
+  //% shim=minode::MinodeShim
   int getanalogPin(AnalogConnName connName)
   {
     int temp=0;
@@ -81,6 +88,7 @@ namespace minode {
    * Get Pin Property
    */
   //% blockId=get_pin_property
+  //% shim=minode::MinodeShim
   int getPinProperty(ConnName connName)
   {
     if (connName == A0 || connName == A1 || connName == A2)
@@ -102,6 +110,7 @@ namespace minode {
    */
 
   //% blockId=device_on_switch_event block="switch %connName| on %event"
+  //% shim=minode::MinodeShim
   void onSwitchEvent(ConnName connName, SwitchEvent event, Action body)
   {
     int id;
@@ -118,6 +127,7 @@ namespace minode {
  */
   //% blockId=device_switch_is_opened block="switch %connName| is opened"
   //% advanced=true
+  //% shim=minode::MinodeShim
   bool switchIsOpened(ConnName connName)
   {
 
@@ -134,6 +144,7 @@ namespace minode {
   * Get DHT11 temperature (celsius or fahrenheit).
   */
   //% blockId=device_DHT_GET_Temperature block="dht11 %connName| tempreature %FanStatus"
+  //% shim=minode::MinodeShim
   int DHTGetTemperature(ConnName connName , DHTTemStyle style)
   {
     MiNodeDHT* pDHT11;
@@ -157,6 +168,7 @@ namespace minode {
   */
   //% blockId=device_DHT_GET_Humidity block="dht11 %connName| humidity"
   //% advanced=true
+  //% shim=minode::MinodeShim
   int DHTGetHumidity(ConnName connName)
   {
     MiNodeDHT* pDHT11;
@@ -173,6 +185,7 @@ namespace minode {
   */
   //% blockId=device_on_DHTtemperature_CHANGE block="dht11 %connName| on temperature change"
   //% advanced=true
+  //% shim=minode::MinodeShim
   void onDHTEvent(ConnName connName, Action body)
   {
     int id;
@@ -188,6 +201,7 @@ namespace minode {
   * Do something when PIR triggered.
   */
   //% blockId=device_on_PIR_trig block="pir %connName| on trigger"
+  //% shim=minode::MinodeShim
   void onPIREvent(ConnName connName, Action body)
   {
     int id;
@@ -204,6 +218,7 @@ namespace minode {
   */
   //% blockId=device_PIR_istrig block="pir %connName| is triggered"
   //% advanced=true
+  //% shim=minode::MinodeShim
   bool PIRIsTriggered(ConnName connName)
   {
 
@@ -220,6 +235,7 @@ namespace minode {
    * Do something when Rotary change.
    */
   //% blockId=device_on_ROTARY_CHANGE block="rotary %connName| on trigger"
+  //% shim=minode::MinodeShim
   void onRotaryEvent(AnalogConnName connName, Action body)
   {
     int id;
@@ -236,6 +252,7 @@ namespace minode {
   */
   //% blockId=device_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
   //% advanced=true
+  //% shim=minode::MinodeShim
   int RotaryGetPercentage(AnalogConnName connName)
   {
     MiNodeRotary* pRotary;
@@ -251,6 +268,7 @@ namespace minode {
   * Do something when Light level change.
   */
   //% blockId=device_on_LightSensor_CHANGE block="light %connName| on change"
+  //% shim=minode::MinodeShim
   void onLightSensorEvent(AnalogConnName connName, Action body)
   {
     int id;
@@ -267,6 +285,7 @@ namespace minode {
   */
   //% blockId=device_LightSensor_GET_light_level block="light %connName| get level"
   //% advanced=true
+  //% shim=minode::MinodeShim
   int LightSensorGetLevel(AnalogConnName connName)
   {
     MiNodeLight* pLight;
@@ -282,6 +301,7 @@ namespace minode {
   * Do something when MIC level change.
   */
   //% blockId=device_on_MIC_level_change block="mic %connName| on change"
+  //% shim=minode::MinodeShim
   void onMICEvent(AnalogConnName connName, Action body)
   {
     int id;
@@ -298,6 +318,7 @@ namespace minode {
   */
   //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
   //% advanced=true
+  //% shim=minode::MinodeShim
   int MICGetLevel(AnalogConnName connName)
   {
     MiNodeMIC* pMic;
@@ -313,6 +334,7 @@ namespace minode {
  * Choose an RGB color from the given table.
  */
   //% blockId=device_RGB_ChooseColor block="rgb led %connName| set %MiNodeColor"
+  //% shim=minode::MinodeShim
   void RGBChooseColor(ConnName connName , MiNodeColor color)
   {
     MiNodeRGB* pRGB;
@@ -327,6 +349,7 @@ namespace minode {
   */
   //% blockId=device_RGB_SetColor block="rgb led %connName| set red %red| green %green| blue %blue"
   //% advanced=true
+  //% shim=minode::MinodeShim
   void RGBSetColor(ConnName connName , int red, int green, int blue)
   {
     MiNodeRGB* pRGB;
