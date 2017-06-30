@@ -48,4 +48,12 @@ namespace minode {
 
     }
 
+   /**
+     * Choose an RGB color from the given table.
+     */
+    //% blockId=device_RGB_ChooseColor block="rgb led %connName| set %MiNodeColor" shim=minode::RGBChooseColor
+    function RGBChooseColor(connName: ConnName, color: MiNodeColor): void{
+    
+    }
+
 }
