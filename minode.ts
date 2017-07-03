@@ -6,33 +6,6 @@
 namespace minode {
 
     /**
-     * Get pinname
-     */
-    //% blockId=get_pin_name
-    //% shim=minode::getPin
-    export function getPin(connName: ConnName): number{
-      return 1;
-    }
-
-    /**
-     * Get analog pinname
-     */
-    //% blockId=get_analog_pin_name
-    //% shim=minode::getanalogPin
-    export function getanalogPin(connName: AnalogConnName): number{
-      return 1;
-    }
-
-    /**
-     * Get Pin Property
-     */
-    //% blockId=get_pin_property
-    //% shim=minode::getPinProperty
-    export function getPinProperty(connName: ConnName): number{
-      return 1;
-    }
-
-    /**
      * Do something when a switch is opened/closed
      * @param switchId a switch ID .
      * @param connName MiNode Connector Name
