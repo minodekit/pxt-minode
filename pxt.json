@@ -36,8 +36,7 @@
         "minode.ts",
         "enums.d.ts",
         "enums.ts",
-        "shims.d.ts",
-        "main.ts"
+        "shims.d.ts"
     ],
     "testFiles": [
         "test.ts"
