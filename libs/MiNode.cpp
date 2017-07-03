@@ -7,7 +7,6 @@ MiNode node;
 
 namespace minode {
 
-  //%
   int getPin(ConnName connName)
   {
     int temp=0;
@@ -45,7 +44,6 @@ namespace minode {
     return temp;
   }
 
-  //%
   int getanalogPin(AnalogConnName connName)
   {
     int temp=0;
@@ -71,7 +69,6 @@ namespace minode {
     return temp;
   }
 
-  //%
   int getPinProperty(ConnName connName)
   {
     if (connName == A0 || connName == A1 || connName == A2)
