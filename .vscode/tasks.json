@@ -16,15 +16,21 @@
         "taskName": "deploy",
         "isBuildCommand": true,
         "problemMatcher": "$tsc",
-        "args": ["deploy"]
+        "args": [""]
     }, {
         "taskName": "build",
         "isTestCommand": true,
         "problemMatcher": "$tsc",
-        "args": ["build"]
+        "args": [""]
     }, {
-        "taskName": "publish",
+        "taskName": "clean",
+        "isTestCommand": true,
         "problemMatcher": "$tsc",
-        "args": ["publish"]
+        "args": [""]
+    }, {
+        "taskName": "serial",
+        "isTestCommand": true,
+        "problemMatcher": "$tsc",
+        "args": [""]
     }]
 }

@@ -33,7 +33,6 @@ void MiNodePIR::attach(ConnName connName)
 int MiNodePIR::isTriged()
 {
   int temp=0;
-  int i;
   for (int i = 0; i < 10; ++i)
   {
     if (readPir() != 0)

@@ -56,7 +56,7 @@ void MiNodeMIC::systemTick()
 
 unsigned int MiNodeMIC::getADvalue()
 {
-  unsigned long temp=0;
+  unsigned int temp=0;
 
   for (int i = 0; i < 32; ++i)
   {
