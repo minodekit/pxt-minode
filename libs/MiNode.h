@@ -1,8 +1,6 @@
 #ifndef _MINODE_H
 #define _MINODE_H
 
-
-
 #include "mbed.h"
 
 #include "MicroBitConfig.h"
@@ -20,7 +18,6 @@
 #include "MiNodeLightSensor.h"
 #include "MiNodeMIC.h"
 #include "MiNodeRGB.h"
-
 
 class MiNode
 {
