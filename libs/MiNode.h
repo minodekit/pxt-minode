@@ -11,6 +11,7 @@
 #include "MiNodeIO.h"
 #include "MiNodeModulePool.h"
 #include "MiNodeRGB.h"
+#include "MiNodeDHT11.h"
 
 class MiNode
 {
@@ -29,6 +30,7 @@ public:
 
   MiNodeIO io;
   MiNodeModulePool<MiNodeRGB>      rgb;
+  MiNodeModulePool<MiNodeDHT>      dht11;
 
 };
 

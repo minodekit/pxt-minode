@@ -19,7 +19,9 @@
         "libs/MiNodeModulePool.h",
         "libs/MiNodeRGB.h",
         "libs/MiNodeRGB.cpp",
-        "libs/midi.cpp",
+        "libs/MiNodeDHT11.cpp",
+        "libs/MiNodeDHT11.h",
+        "libs/minode.cpp",
         "shims.d.ts",
         "enums.ts",
         "enums.d.ts"
