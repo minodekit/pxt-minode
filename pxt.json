@@ -1,45 +1,32 @@
 {
     "name": "minode",
-    "version": "0.0.1",
-    "description": "micro:bit Accessories - Mi:Node kit driver package for PXT/microbit",
+    "version": "2.0.3",
+    "description": "A MIDI output controller package",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "libs/MiNodeConn.h",
-        "libs/MiNodeConn.cpp",
+        "minode.ts",
+        "libs/MiNode.h",
         "libs/MiNodeComponent.h",
         "libs/MiNodeComponent.cpp",
-        "libs/MiNodeModulePool.h",
+        "libs/MiNodeConn.h",
+        "libs/MiNodeConn.cpp",
         "libs/MiNodeIO.h",
         "libs/MiNodeIO.cpp",
-        "libs/MiNode.h",
-        "libs/MiNode.cpp",
-        "libs/MiNodeSwitch.h",
-        "libs/MiNodeSwitch.cpp",
-        "libs/MiNodeFan.h",
-        "libs/MiNodeFan.cpp",
-        "libs/MiNodeDHT11.h",
-        "libs/MiNodeDHT11.cpp",
-        "libs/MiNodePIR.h",
-        "libs/MiNodePIR.cpp",
-        "libs/MiNodeRotary.h",
-        "libs/MiNodeRotary.cpp",
-        "libs/MiNodeLightSensor.h",
-        "libs/MiNodeLightSensor.cpp",
-        "libs/MiNodeMIC.h",
-        "libs/MiNodeMIC.cpp",
+        "libs/MiNodeModulePool.h",
         "libs/MiNodeRGB.h",
         "libs/MiNodeRGB.cpp",
-        "minode.ts",
-        "enums.d.ts",
+        "libs/midi.cpp",
+        "shims.d.ts",
         "enums.ts",
-        "shims.d.ts"
+        "enums.d.ts"
     ],
     "testFiles": [
-        "test.ts"
+        "tests.ts"
     ],
-    "public": true
+    "public": true,
+    "installedVersion": "file:../pxt-minode"
 }

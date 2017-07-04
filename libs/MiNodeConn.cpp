@@ -41,47 +41,7 @@ void MiNodeConn::calcPinName(ConnName name, PinName* p0, PinName* p1)
       pin0 = MICROBIT_PIN_P15;
       pin1 = MICROBIT_PIN_P16;
       break;
-  }
-
-  *p0 = pin0;
-  *p1 = pin1;
-
-  return;
-}
-
-void MiNodeConn::calcPinName(AnalogConnName name, PinName* p0, PinName* p1)
-{
-  PinName pin0 = NC;
-  PinName pin1 = NC;
-
-  switch(name) {
-    case A0:
-      pin0 = MICROBIT_PIN_P0;
-      pin1 = MICROBIT_PIN_P1;
-      break;
-    case A1:
-      pin0 = MICROBIT_PIN_P1;
-      pin1 = MICROBIT_PIN_P2;
-      break;
-    case A2:
-      pin0 = MICROBIT_PIN_P2;
-      pin1 = MICROBIT_PIN_P3;
-      break;
-    case D12:
-      pin0 = MICROBIT_PIN_P12;
-      pin1 = MICROBIT_PIN_P13;
-      break;
-    case D13:
-      pin0 = MICROBIT_PIN_P13;
-      pin1 = MICROBIT_PIN_P14;
-      break;
-    case D14:
-      pin0 = MICROBIT_PIN_P14;
-      pin1 = MICROBIT_PIN_P15;
-      break;
-    case D15:
-      pin0 = MICROBIT_PIN_P15;
-      pin1 = MICROBIT_PIN_P16;
+    default:
       break;
   }
 
@@ -105,7 +65,6 @@ ConnName MiNodeConn::calcConnName(PinName p0)
     case MICROBIT_PIN_P2:
       conn = A2;
       break;
-
     case MICROBIT_PIN_P12:
       conn = D12;
       break;
@@ -117,6 +76,8 @@ ConnName MiNodeConn::calcConnName(PinName p0)
       break;
     case MICROBIT_PIN_P15:
       conn = D15;
+      break;
+    default:
       break;
   }
   return conn;

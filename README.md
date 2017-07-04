@@ -36,6 +36,5 @@ MIT
 (The metadata above is needed for package search.)
 
 ```package
-minode=github:minodekit/pxt-minode#new-module
+minode=github:minodekit/pxt-minode
 ```
-
