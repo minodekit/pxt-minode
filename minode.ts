@@ -29,7 +29,7 @@ namespace minode {
     //% blockId=minode_dht_get_temperature block="dht11 %connName| tempreature %FanStatus" 
     //% shim=minode::DHTGetTemperature
     export function DHTGetTemperature(connName: ConnName, style: DHTTemStyle): number{
-      return 1;
+      return 0;
     }
 
     /**
@@ -39,7 +39,7 @@ namespace minode {
     //% advanced=true
     //% shim=minode::DHTGetHumidity
     export function DHTGetHumidity(connName: ConnName): number{
-      return 1;
+      return 0;
     }
 
     /**
@@ -72,6 +72,25 @@ namespace minode {
     //% shim=minode::switchIsOpened
     export function switchIsOpened(connName: ConnName): boolean{
       return true;
+    }
+
+    /**
+     * Do something when Rotary change.
+     */
+    //% blockId=minode_on_ROTARY_CHANGE block="rotary %connName| on trigger"
+    //% shim=minode::onRotaryEvent
+    export function onRotaryEvent(connName: AnalogConnName, body: () => void): void{
+    	return;
+    }
+
+    /**
+     * Get Rotary percentage.
+     */
+    //% blockId=minode_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
+    //% advanced=true
+    //% shim=minode::RotaryGetPercentage
+    export function RotaryGetPercentage(connName: AnalogConnName): number{
+      return 0;
     }
 
 }

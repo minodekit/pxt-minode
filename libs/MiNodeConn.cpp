@@ -42,6 +42,38 @@ void MiNodeConn::calcPinName(ConnName name, PinName* p0, PinName* p1)
       pin1 = MICROBIT_PIN_P16;
       break;
     default:
+      pin0 = MICROBIT_PIN_P0;
+      pin1 = MICROBIT_PIN_P1;
+      break;
+  }
+
+  *p0 = pin0;
+  *p1 = pin1;
+
+  return;
+}
+
+void MiNodeConn::calcPinName(AnalogConnName name, PinName* p0, PinName* p1)
+{
+  PinName pin0 = NC;
+  PinName pin1 = NC;
+
+  switch(name) {
+    case A0:
+      pin0 = MICROBIT_PIN_P0;
+      pin1 = MICROBIT_PIN_P1;
+      break;
+    case A1:
+      pin0 = MICROBIT_PIN_P1;
+      pin1 = MICROBIT_PIN_P2;
+      break;
+    case A2:
+      pin0 = MICROBIT_PIN_P2;
+      pin1 = MICROBIT_PIN_P3;
+      break;
+    default:
+      pin0 = MICROBIT_PIN_P0;
+      pin1 = MICROBIT_PIN_P1;
       break;
   }
 
@@ -78,6 +110,7 @@ ConnName MiNodeConn::calcConnName(PinName p0)
       conn = D15;
       break;
     default:
+      conn = A0;
       break;
   }
   return conn;

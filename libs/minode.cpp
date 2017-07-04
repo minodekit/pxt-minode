@@ -89,4 +89,27 @@ namespace minode {
     	return isOpened ? true : false;
   	}
 
+  	//%
+  	void onRotaryEvent(AnalogConnName connName, Action body)
+  	{
+    	int id;
+    	MiNodeRotary* pRotary;
+
+    	pRotary = node.rotary.attach(connName);
+    	id = pRotary->getId();
+
+    	registerWithDal(id, MINODE_ROTARY_EVT_CHANGE, body);
+  	}
+
+  	//%
+ 	int RotaryGetPercentage(AnalogConnName connName)
+  	{
+    	MiNodeRotary* pRotary;
+    	int rotaryPercentage=0;
+
+    	pRotary = node.rotary.attach(connName);
+    	rotaryPercentage = pRotary->getPercentage();
+
+    	return rotaryPercentage;
+  	}
 }

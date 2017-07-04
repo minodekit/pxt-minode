@@ -23,6 +23,8 @@
         "libs/MiNodeDHT11.h",
         "libs/MiNodeSwitch.cpp",
         "libs/MiNodeSwitch.h",
+        "libs/MiNodeRotary.cpp",
+        "libs/MiNodeRotary.h",
         "libs/minode.cpp",
         "shims.d.ts",
         "enums.ts",

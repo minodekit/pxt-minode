@@ -13,6 +13,7 @@
 #include "MiNodeRGB.h"
 #include "MiNodeDHT11.h"
 #include "MiNodeSwitch.h"
+#include "MiNodeRotary.h"
 
 class MiNode
 {
@@ -33,6 +34,7 @@ public:
   MiNodeModulePool<MiNodeRGB>      rgb;
   MiNodeModulePool<MiNodeDHT>      dht11;
   MiNodeModulePool<MiNodeSwitch>   switches;
+  MiNodeModulePool<MiNodeRotary>   rotary;
 
 };
 
