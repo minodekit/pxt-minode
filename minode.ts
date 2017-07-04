@@ -93,4 +93,23 @@ namespace minode {
       return 0;
     }
 
+    /**
+     * Do something when PIR triggered.
+     */
+    //% blockId=minode_on_PIR_trig block="pir %connName| on trigger"
+    //% shim=minode::onPIREvent
+    export function onPIREvent(connName: ConnName, body: () => void): void{
+    	return;
+    }
+
+    /**
+     * Get the PIR state (trigger or not).
+     */
+    //% blockId=minode_PIR_istrig block="pir %connName| is triggered"
+    //% advanced=true
+    //% shim=minode::PIRIsTriggered
+    export function PIRIsTriggered(connName: ConnName): boolean{
+      return true;
+    }
+
 }

@@ -25,6 +25,8 @@
         "libs/MiNodeSwitch.h",
         "libs/MiNodeRotary.cpp",
         "libs/MiNodeRotary.h",
+        "libs/MiNodePIR.cpp",
+        "libs/MiNodePIR.h",
         "libs/minode.cpp",
         "shims.d.ts",
         "enums.ts",
