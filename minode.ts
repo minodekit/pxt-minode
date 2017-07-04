@@ -131,4 +131,23 @@ namespace minode {
       return 0;
     }
 
+    /**
+     * Do something when Light level change.
+     */
+    //% blockId=device_on_LightSensor_CHANGE block="light %connName| on change"
+    //% shim=minode::onLightSensorEvent
+    export function onLightSensorEvent(connName: AnalogConnName, body: () => void): void{
+    	return;
+    }
+
+    /**
+     * Get Light level.from 1(brightest) to 5(darkness).
+     */
+    //% blockId=device_LightSensor_GET_light_level block="light %connName| get level"
+    //% advanced=true
+    //% shim=minode::LightSensorGetLevel
+    export function LightSensorGetLevel(connName: AnalogConnName): number{
+      return 0;
+    }
+
 }

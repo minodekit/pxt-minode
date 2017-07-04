@@ -161,4 +161,28 @@ namespace minode {
 
     	return micLevel;
   	}
+
+  	//%
+  	void onLightSensorEvent(AnalogConnName connName, Action body)
+  	{
+    	int id;
+    	MiNodeLight* pLight;
+
+    	pLight = node.light.attach(connName);
+    	id = pLight->getId();
+
+    	registerWithDal(id, MINODE_LIGHT_EVT_LEVEL_CHANGE, body);
+  	}
+
+  	//%
+  	int LightSensorGetLevel(AnalogConnName connName)
+  	{
+    	MiNodeLight* pLight;
+    	int lightLevel=0;
+
+    	pLight = node.light.attach(connName);
+    	lightLevel = pLight->getLightLevel();
+
+    	return lightLevel;
+  	}
 }

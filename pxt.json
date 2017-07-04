@@ -29,6 +29,8 @@
         "libs/MiNodePIR.h",
         "libs/MiNodeMIC.cpp",
         "libs/MiNodeMIC.h",
+        "libs/MiNodeLightSensor.cpp",
+        "libs/MiNodeLightSensor.h",
         "libs/minode.cpp",
         "shims.d.ts",
         "enums.ts",
