@@ -52,4 +52,26 @@ namespace minode {
     	return;
     }
 
+    /**
+     * Do something when a switch is opened/closed
+     * @param switchId a switch ID .
+     * @param connName MiNode Connector Name
+     * @param event Event to listen
+     */
+    //% blockId=minode_on_switch_event block="switch %connName| on %event"
+    //% shim=minode::onSwitchEvent
+    export function onSwitchEvent(connName: ConnName, event: SwitchEvent, body: () => void): void{
+    	return;
+    }
+
+    /**
+     * Get the switch state (open or not).
+     */
+    //% blockId=minode_switch_is_opened block="switch %connName| is opened"
+    //% advanced=true
+    //% shim=minode::switchIsOpened
+    export function switchIsOpened(connName: ConnName): boolean{
+      return true;
+    }
+
 }

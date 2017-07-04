@@ -64,4 +64,29 @@ namespace minode {
     	registerWithDal(id, MINODE_DHT_EVT_CHANGE, body);
   	}
 
+  	//%
+ 	void onSwitchEvent(ConnName connName, SwitchEvent event, Action body)
+  	{
+    	int id;
+    	MiNodeSwitch* pSwitch;
+
+    	pSwitch = node.switches.attach(connName);
+    	id = pSwitch->getId();
+
+    	registerWithDal(id, event, body);
+  	}
+
+  	//%
+  	bool switchIsOpened(ConnName connName)
+  	{
+
+    	MiNodeSwitch* pSwitch;
+    	int isOpened;
+
+    	pSwitch = node.switches.attach(connName);
+    	isOpened = pSwitch->isOpened();
+
+    	return isOpened ? true : false;
+  	}
+
 }
