@@ -112,4 +112,23 @@ namespace minode {
       return true;
     }
 
+    /**
+     * Do something when MIC level change.
+     */
+    //% blockId=device_on_MIC_level_change block="mic %connName| on change"
+    //% shim=minode::onMICEvent
+    export function onMICEvent(connName: AnalogConnName, body: () => void): void{
+    	return;
+    }
+
+    /**
+     * Get MIC level.from 1(quiet) to 5(noisy).
+     */
+    //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
+    //% advanced=true
+    //% shim=minode::MICGetLevel
+    export function MICGetLevel(connName: AnalogConnName): number{
+      return 0;
+    }
+
 }

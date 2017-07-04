@@ -137,4 +137,28 @@ namespace minode {
 
 	    return triggered ? true : false;
 	}
+
+	//%
+  	void onMICEvent(AnalogConnName connName, Action body)
+  	{
+    	int id;
+    	MiNodeMIC* pMic;
+
+    	pMic = node.mic.attach(connName);
+    	id = pMic->getId();
+
+    	registerWithDal(id, MINODE_MIC_EVT_NOISE, body);
+  	}
+
+  	//%
+  	int MICGetLevel(AnalogConnName connName)
+  	{
+    	MiNodeMIC* pMic;
+    	int micLevel=0;
+
+    	pMic = node.mic.attach(connName);
+    	micLevel = pMic->getMicLevel();
+
+    	return micLevel;
+  	}
 }

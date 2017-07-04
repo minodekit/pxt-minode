@@ -15,6 +15,7 @@
 #include "MiNodeSwitch.h"
 #include "MiNodeRotary.h"
 #include "MiNodePIR.h"
+#include "MiNodeMIC.h"
 
 class MiNode
 {
@@ -37,7 +38,8 @@ public:
   MiNodeModulePool<MiNodeSwitch>   switches;
   MiNodeModulePool<MiNodeRotary>   rotary;
   MiNodeModulePool<MiNodePIR>      pir;
-  
+  MiNodeModulePool<MiNodeMIC>      mic;
+
 };
 
 #endif
