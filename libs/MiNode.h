@@ -17,6 +17,7 @@
 #include "MiNodePIR.h"
 #include "MiNodeMIC.h"
 #include "MiNodeLightSensor.h"
+#include "MiNodeFan.h"
 
 class MiNode
 {
@@ -41,6 +42,7 @@ public:
   MiNodeModulePool<MiNodePIR>      pir;
   MiNodeModulePool<MiNodeMIC>      mic;
   MiNodeModulePool<MiNodeLight>    light;
+  MiNodeModulePool<MiNodeFan>      fan;
 
 };
 
