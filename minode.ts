@@ -125,6 +125,7 @@ namespace minode {
      */
     //% blockId=minode_on_PIR_trig block="pir %connName| on trigger"
     //% shim=minode::onPIREvent
+    //% advanced=true
     export function onPIREvent(connName: ConnName, body: () => void): void{
     	return;
     }
@@ -144,6 +145,7 @@ namespace minode {
      */
     //% blockId=minode_on_MIC_level_change block="mic %connName| on change"
     //% shim=minode::onMICEvent
+    //% advanced=true
     export function onMICEvent(connName: AnalogConnName, body: () => void): void{
     	return;
     }
@@ -152,7 +154,6 @@ namespace minode {
      * Get MIC level.from 1(quiet) to 5(noisy).
      */
     //% blockId=minode_MIC_GET_mic_level block="mic %connName| get level"
-    //% advanced=true
     //% shim=minode::MICGetLevel
     export function MICGetLevel(connName: AnalogConnName): number{
       return 0;
@@ -171,7 +172,6 @@ namespace minode {
      * Get Light level.from 1(brightest) to 5(darkness).
      */
     //% blockId=minode_LightSensor_GET_light_level block="light %connName| get level"
-    //% advanced=true
     //% shim=minode::LightSensorGetLevel
     export function LightSensorGetLevel(connName: AnalogConnName): number{
       return 0;
