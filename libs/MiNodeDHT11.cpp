@@ -52,6 +52,8 @@ int MiNodeDHT::whileGet(int v)
   }
   if(time_out == TIME_TH)
     return 1;
+  else
+    return 0;
 }
 
 void MiNodeDHT::dhtStart()

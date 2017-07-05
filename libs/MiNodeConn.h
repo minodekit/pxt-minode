@@ -5,7 +5,6 @@
 #include "MicroBitConfig.h"
 #include "MicroBitPin.h"
 
-
 typedef enum
 {
   A0 = 0,

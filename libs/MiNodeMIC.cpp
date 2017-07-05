@@ -1,7 +1,7 @@
 #include "MiNodeMIC.h"
 
 MiNodeMIC::MiNodeMIC() :
-pin(NULL),currentAD(-1),count(0)
+pin(NULL),count(0),currentAD(-1)
 {
   this->baseId = MINODE_ID_MODULE_LIGHT;
   system_timer_add_component(this);
@@ -56,7 +56,7 @@ void MiNodeMIC::systemTick()
 
 unsigned int MiNodeMIC::getADvalue()
 {
-  unsigned long temp=0;
+  unsigned int temp=0;
 
   for (int i = 0; i < 32; ++i)
   {

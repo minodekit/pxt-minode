@@ -1,8 +1,6 @@
 #ifndef _MINODE_H
 #define _MINODE_H
 
-
-
 #include "mbed.h"
 
 #include "MicroBitConfig.h"
@@ -12,15 +10,14 @@
 #include "MiNodeComponent.h"
 #include "MiNodeIO.h"
 #include "MiNodeModulePool.h"
-#include "MiNodeSwitch.h"
-#include "MiNodeFan.h"
-#include "MiNodeDHT11.h"
-#include "MiNodePIR.h"
-#include "MiNodeRotary.h"
-#include "MiNodeLightSensor.h"
-#include "MiNodeMIC.h"
 #include "MiNodeRGB.h"
-
+#include "MiNodeDHT11.h"
+#include "MiNodeSwitch.h"
+#include "MiNodeRotary.h"
+#include "MiNodePIR.h"
+#include "MiNodeMIC.h"
+#include "MiNodeLightSensor.h"
+#include "MiNodeFan.h"
 
 class MiNode
 {
@@ -38,14 +35,14 @@ public:
   }
 
   MiNodeIO io;
-  MiNodeModulePool<MiNodeSwitch>   switches;
-  MiNodeModulePool<MiNodeFan>      fan;
-  MiNodeModulePool<MiNodeDHT>      dht11;
-  MiNodeModulePool<MiNodePIR>      pir;
-  MiNodeModulePool<MiNodeRotary>   rotary;
-  MiNodeModulePool<MiNodeLight>    light;
-  MiNodeModulePool<MiNodeMIC>      mic;
   MiNodeModulePool<MiNodeRGB>      rgb;
+  MiNodeModulePool<MiNodeDHT>      dht11;
+  MiNodeModulePool<MiNodeSwitch>   switches;
+  MiNodeModulePool<MiNodeRotary>   rotary;
+  MiNodeModulePool<MiNodePIR>      pir;
+  MiNodeModulePool<MiNodeMIC>      mic;
+  MiNodeModulePool<MiNodeLight>    light;
+  MiNodeModulePool<MiNodeFan>      fan;
 
 };
 
