@@ -1,7 +1,7 @@
 {
     "name": "minode",
-    "version": "2.0.3",
-    "description": "A MIDI output controller package",
+    "version": "1.0.0",
+    "description": "mi:node IoT Starter Kit - A micro:bit accessories Kit with 10 sensor modules for IoT node applications",
     "license": "MIT",
     "dependencies": {
         "core": "*"

@@ -1,6 +1,6 @@
 # pxt-minode
 
-Mi:Node Kit(micro:bit accessories by Embest) driver package for [PXT/microbit](https://pxt.microbit.org)
+mi:node Kit(micro:bit accessories by [Embest](http://www.embest-tech.com/)) driver package for [JavaScript Blocks Editor / makecode.microbit.org](https://makecode.microbit.org)
 
 ## Usage
 
@@ -9,9 +9,9 @@ Mi:Node Kit(micro:bit accessories by Embest) driver package for [PXT/microbit](h
 3. Use the `Minode` drawer in the editor to drag out and arrange the blocks
 4. Click `Download` to move your program to the micro:bit
 
-## About minode Kit
+## About mi:node Kit
 
-The Mi:Node kit is a modular, safe and easy to use group of items that allow kids to minimize the effort required to get started with IOT learning with [micro:bit](https://www.microbit.org).
+The mi:node kit is a modular, safe and easy to use group of items that allow kids to minimize the effort required to get started with IoT learning with [micro:bit](https://www.microbit.org).
 
 ![](minode.jpg)
 
@@ -22,9 +22,15 @@ For this kit, there is no need for soldering, plug then use, the construction of
     + Safe for kids. No need for soldering
     + Easy. Just plug then use it
     + Expandable and reusable
-- Ten modules Focus on IOT Node
+- Ten modules Focus on IoT Node
     + 10 sensor modules include:environmental monitoring, user interface, physical monitoring
     + Can be built a lot of cool projects include wearable device and smart home, etc.
+
+### Documentation
+
+- [Draft mi:node Kit User Manual]()
+- [Draft QuickStart]()
+- [Draft Lessons]()
 
 More please refer to http://www.embest-tech.com.
 
