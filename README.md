@@ -13,7 +13,7 @@ Mi:Node Kit(micro:bit accessories by Embest) driver package for [PXT/microbit](h
 
 The Mi:Node kit is a modular, safe and easy to use group of items that allow kids to minimize the effort required to get started with IOT learning with [micro:bit](https://www.microbit.org).
 
-![](minode.png)
+![](minode.jpg)
 
 For this kit, there is no need for soldering, plug then use, the construction of the working circuit can be done within one minute.
 
@@ -40,7 +40,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-![](rgb2.jpg)
+![](rgb_demo.jpg)
 
 ## License
 
