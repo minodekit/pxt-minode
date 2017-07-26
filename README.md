@@ -13,7 +13,7 @@ mi:node Kit(micro:bit accessories by [Embest](http://www.embest-tech.com/)) driv
 
 The mi:node kit is a modular, safe and easy to use group of items that allow kids to minimize the effort required to get started with IoT learning with [micro:bit](https://www.microbit.org).
 
-![](minode.jpg)
+![](https://github.com/minodekit/pxt-minode/blob/master/minode.jpg)
 
 For this kit, there is no need for soldering, plug then use, the construction of the working circuit can be done within one minute.
 
@@ -46,7 +46,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-![](rgb_demo.jpg)
+![](https://github.com/minodekit/pxt-minode/blob/master/rgb_demo.jpg)
 
 ## License
 
