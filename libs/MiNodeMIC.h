@@ -35,18 +35,16 @@ class MiNodeMIC : public MiNodeComponent
   public:
     MiNodeMIC();
 
-    unsigned int getADvalue();
-    int getMicLevel();
+    void detachTimer();
+    void checking();
 
     void attach(AnalogConnName connName);
 
-    virtual void systemTick();
     ~MiNodeMIC();
 
   private:
     AnalogIn* pin;
-    int count;
-    int currentAD;
+    Ticker timer;
 
 };
 

@@ -1,7 +1,7 @@
 #include "MiNodeMIC.h"
 
 MiNodeMIC::MiNodeMIC() :
-pin(NULL),count(0),currentAD(-1)
+pin(NULL)
 {
   this->baseId = MINODE_ID_MODULE_LIGHT;
   system_timer_add_component(this);
@@ -13,6 +13,55 @@ MiNodeMIC::~MiNodeMIC()
     delete pin;
   }
   system_timer_remove_component(this);
+}
+
+void MiNodeMIC::checking(void)
+{
+  static int adHolder[8] = {0,0,0,0,0,0,0,0};
+  static int ad_count = 0;
+  int temp = 0;
+  int i=0;
+  int current_ad = 0;
+  static int tri_flag = 0;
+  static int time_count = 0;
+
+  current_ad = pin->read_u16();
+  if (current_ad > 528)
+  {
+    adHolder[ad_count%8] = current_ad - 528;
+    ad_count++;
+  }
+  else
+  {
+    adHolder[ad_count%8] = 528 - current_ad;
+    ad_count++;
+  }
+
+  if (tri_flag == 1)
+  {
+    time_count++;
+    if (time_count > 1000)
+    {
+      tri_flag = 0;
+      time_count = 0;
+    }
+  }
+
+  if(tri_flag == 0)
+  {
+    for(i=0; i<8; i++)
+    {
+      temp += adHolder[i];
+    }
+    temp /= 8;
+
+    if(temp > 150)
+    {
+      MicroBitEvent evt(this->baseId + this->id,MINODE_MIC_EVT_NOISE);
+      tri_flag = 1;
+      temp = 0;
+    }
+  }
 }
 
 void MiNodeMIC::attach(AnalogConnName connName)
@@ -28,74 +77,13 @@ void MiNodeMIC::attach(AnalogConnName connName)
     delete pin;
   }
   pin = new AnalogIn(pinName);
+
+  timer.attach_us(this, &MiNodeMIC::checking, 500);
 }
 
-void MiNodeMIC::systemTick()
+void MiNodeMIC::detachTimer()
 {
-  count++;
-  int temp_ad=0;
-
-  if (count == 20)
-  {
-    temp_ad = getADvalue();
-    if (currentAD == -1)
-    {
-      currentAD = temp_ad;
-    }
-    else
-    {
-      if ((temp_ad - currentAD > MINODE_MIC_NOISE_THRESHOLD) || (temp_ad - currentAD < (0-MINODE_MIC_NOISE_THRESHOLD)))
-      {
-        MicroBitEvent evt(this->baseId + this->id,MINODE_MIC_EVT_NOISE);
-        currentAD = temp_ad;
-      }
-    }
-    count = 0;
-  }
-}
-
-unsigned int MiNodeMIC::getADvalue()
-{
-  unsigned int temp=0;
-
-  for (int i = 0; i < 32; ++i)
-  {
-    temp+=pin->read_u16();
-  }
-  temp >>= 5;
-
-  return temp;
-}
-
-int MiNodeMIC::getMicLevel()
-{
-  unsigned int temp=0;
-  temp = getADvalue();
-
-  if ((temp > MICROBIT_MIC_MIN) && (temp < MICROBIT_MIC_LEVEL_A+1))
-  {
-    return MICROBIT_MIC_LEVEL_1;
-  }
-  else if ((temp > MICROBIT_MIC_LEVEL_A) && (temp < MICROBIT_MIC_LEVEL_B+1))
-  {
-    return MICROBIT_MIC_LEVEL_2;
-  }
-  else if ((temp > MICROBIT_MIC_LEVEL_B) && (temp < MICROBIT_MIC_LEVEL_C+1))
-  {
-    return MICROBIT_MIC_LEVEL_3;
-  }
-  else if ((temp > MICROBIT_MIC_LEVEL_C) && (temp < MICROBIT_MIC_LEVEL_D+1))
-  {
-    return MICROBIT_MIC_LEVEL_4;
-  }
-  else if ((temp > MICROBIT_MIC_LEVEL_D) && (temp < MICROBIT_MIC_MAX+1))
-  {
-    return MICROBIT_MIC_LEVEL_5;
-  }
-  else
-  {
-    return MICROBIT_MIC_LEVEL_ERROR;
-  }
+  timer.detach();
 }
 
 
