@@ -27,8 +27,6 @@
         "libs/MiNodeRotary.h",
         "libs/MiNodePIR.cpp",
         "libs/MiNodePIR.h",
-        "libs/MiNodeMIC.cpp",
-        "libs/MiNodeMIC.h",
         "libs/MiNodeLightSensor.cpp",
         "libs/MiNodeLightSensor.h",
         "libs/MiNodeFan.cpp",
