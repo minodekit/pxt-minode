@@ -46,7 +46,7 @@ int MiNodeDHT::dhtGet()
 int MiNodeDHT::whileGet(int v)
 {
   time_out = 0;
-  while(v==dhtGet() && (time_out < TIME_TH))
+  while((v==dhtGet()) && (time_out < TIME_TH))
   {
     time_out ++;
   }
@@ -67,9 +67,12 @@ void MiNodeDHT::dhtStart()
 
 void MiNodeDHT::dhtReadAck()
 {
-    whileGet(1);
-    whileGet(0);
-    whileGet(1);
+    if(whileGet(1) == 1)
+	return 1;
+    if(whileGet(0) == 1)
+	return 1;
+    if(whileGet(1) == 1)
+	return 1;
 }
 
 void MiNodeDHT::dhtReadOneBit()
@@ -131,7 +134,8 @@ int MiNodeDHT::dhtGetHt()
     int T_L=0;
 
     dhtStart();
-    dhtReadAck();
+    if(dhtReadAck() = 1)
+	return 0;
 
     dhtReadOneByte();
     R_H = bt;
