@@ -64,7 +64,7 @@ class MiNodeDHT : public MiNodeComponent
     int dhtGet();
     int whileGet(int v);
     void dhtStart();
-    void dhtReadAck();
+    int dhtReadAck();
     void dhtReadOneBit();
     void dhtReadOneByte();
     int dhtGetHt();

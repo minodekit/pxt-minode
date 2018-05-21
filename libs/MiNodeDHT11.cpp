@@ -65,14 +65,16 @@ void MiNodeDHT::dhtStart()
     dhtSet(1);
 }
 
-void MiNodeDHT::dhtReadAck()
+int MiNodeDHT::dhtReadAck()
 {
     if(whileGet(1) == 1)
-	return 1;
+      return 1;
     if(whileGet(0) == 1)
-	return 1;
+      return 1;
     if(whileGet(1) == 1)
-	return 1;
+      return 1;
+
+    return 0;
 }
 
 void MiNodeDHT::dhtReadOneBit()
@@ -107,15 +109,15 @@ void MiNodeDHT::systemTick()
   int temp=0;
   count++;
 
- if (count == 100)
+ if (count == 200)
   {
-    temp = getTemperature();
-     if (currentTem == -99)
+    dhtGetHt();
+    if (currentTem == -99)
     {
-      currentTem = temp;
+      currentTem = Temperature;
     }
 
-    if((temp - currentTem == 1) || (currentTem - temp == 1))
+    if((Temperature - currentTem == 1) || (currentTem - Temperature == 1))
     {
       currentTem = temp;
       MicroBitEvent(this->baseId + this->id, MINODE_DHT_EVT_CHANGE);
@@ -134,8 +136,8 @@ int MiNodeDHT::dhtGetHt()
     int T_L=0;
 
     dhtStart();
-    if(dhtReadAck() = 1)
-	return 0;
+    if(dhtReadAck() == 1)
+      return 0;
 
     dhtReadOneByte();
     R_H = bt;
@@ -160,19 +162,31 @@ int MiNodeDHT::dhtGetHt()
 
 int MiNodeDHT::getTemperature()
 {
-  dhtGetHt();
+  if (currentTem == -99)
+  {
+    dhtGetHt();
+    currentTem = Temperature;
+  }
   return Temperature;
 }
 
 int MiNodeDHT::getFahrenheitTemperature()
 {
-  int temp = getTemperature();
-  return temp*9/5+32;
+  if (currentTem == -99)
+  {
+    dhtGetHt();
+    currentTem = Temperature;
+  }
+  return Temperature*9/5+32;
 }
 
 int MiNodeDHT::getHumidity()
 {
-  dhtGetHt();
+  if (currentTem == -99)
+  {
+    dhtGetHt();
+    currentTem = Temperature;
+  }
   return Humidity;
 }
 
