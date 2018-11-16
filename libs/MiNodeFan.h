@@ -12,10 +12,13 @@
 #include "MicroBitSystemTimer.h"
 
 
-typedef enum {
+enum FanStatus
+{
+  //% block="open" enumval=1
   MINODE_FAN_OPEN = 1,
-  MINODE_FAN_CLOSE = 2,
-}FanStatus;
+  //% block="close" enumval=2
+  MINODE_FAN_CLOSE = 2
+};
 
 class MiNodeFan : public MiNodeComponent
 {

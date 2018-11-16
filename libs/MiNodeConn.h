@@ -5,25 +5,37 @@
 #include "MicroBitConfig.h"
 #include "MicroBitPin.h"
 
-typedef enum
+enum ConnName
 {
+  //% block="A0" enumval=0
   A0 = 0,
+  //% block="A1" enumval=1
   A1 = 1,
+  //% block="A2" enumval=2
   A2 = 2,
+  //% block="D12" enumval=12
   D12 = 12,
+  //% block="D13" enumval=13
   D13 = 13,
+  //% block="D14" enumval=14
   D14 = 14,
+  //% block="D15" enumval=15
   D15 = 15,
-  MN_NC = NC
-}ConnName;
+  //% block="NC" enumval=-1
+  MN_NC = -1
+};
 
-typedef enum
+enum AnalogConnName
 {
+  //% block="A0" enumval=0
   Analog_A0 = 0,
+  //% block="A1" enumval=1
   Analog_A1 = 1,
+  //% block="A2" enumval=2
   Analog_A2 = 2,
-  Analog_MN_NC = NC
-}AnalogConnName;
+  //% block="NC" enumval=-1
+  Analog_MN_NC = -1
+};
 
 class MiNodeConn
 {

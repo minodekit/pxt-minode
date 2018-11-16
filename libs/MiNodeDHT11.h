@@ -14,10 +14,12 @@
 #define MINODE_DHT_EVT_CHANGE                  1
 #define TIME_TH 		                       10000
 
-typedef enum {
+enum DHTTemStyle {
+  //% block="Celsius" enumval=1
   MINODE_DHT_CELSIUS = 1,
+  //% block="Fahrenheit" enumval=2
   MINODE_FAN_FAHRENHEIT = 2,
-}DHTTemStyle;
+};
 
 #define delay60US()\
 t++;t++;t++;t++;t++;t++;t++;t++;t++;t++;\

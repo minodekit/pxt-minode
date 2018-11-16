@@ -11,15 +11,23 @@
 #include "MicroBitDisplay.h"
 #include "MicroBitSystemTimer.h"
 
-typedef enum{
-    MiNode_RGB_COLOR_RED=0,
-    MiNode_RGB_COLOR_GREEN,
-    MiNode_RGB_COLOR_BLUE,
-    MiNode_RGB_COLOR_YELLOW,
-    MiNode_RGB_COLOR_PINK,
-    MiNode_RGB_COLOR_CYAN,
-    MiNode_RGB_COLOR_WHITE
-}MiNodeColor;
+enum MiNodeColor
+{
+  //% block="Red" enumval=0
+  MiNode_RGB_COLOR_RED = 0,
+  //% block="Green" enumval=1
+  MiNode_RGB_COLOR_GREEN = 1,
+  //% block="Blue" enumval=2
+  MiNode_RGB_COLOR_BLUE = 2,
+  //% block="Yellow" enumval=3
+  MiNode_RGB_COLOR_YELLOW = 3,
+  //% block="Pink" enumval=4
+  MiNode_RGB_COLOR_PINK = 4,
+  //% block="Cyan" enumval=5
+  MiNode_RGB_COLOR_CYAN = 5,
+  //% block="White" enumval=6
+  MiNode_RGB_COLOR_WHITE = 6
+};
 
 class MiNodeRGB : public MiNodeComponent
 {
