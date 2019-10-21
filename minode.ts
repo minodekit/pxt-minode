@@ -43,7 +43,7 @@ namespace minode {
     /**
      * Converts red, green, blue channels into a RGB color.
      */
-    //% blockId=minode_rgb_setcolor block="rgb led %connName| set red %red| green %green| blue %blue"
+    //% blockId=minode_rgb_setcolor block="rgb leddy %connName| set red %red| green %green| blue %blue"
     //% advanced=true
     //% shim=minode::RGBSetColor
     export function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void{
