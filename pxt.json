@@ -41,5 +41,6 @@
         "tests.ts"
     ],
     "public": true,
-    "installedVersion": "file:../pxt-minode"
+    "installedVersion": "workspace:d9758a7a-8023-4abf-e381-82b2eb49d7f3",
+    "preferredEditor": "tsprj"
 }
