@@ -51,6 +51,17 @@ namespace minode {
     }
 
     /**
+     * Converts HSL channels into a RGB color.
+     */
+    //% blockId=minode_hsl_setcolor block="rgb led %connName| set hue %hue| saturation %saturation| lightness %lightness"
+    //% advanced=true
+    //% shim=minode::HSLSetColor
+    export function HSLSetColor(connName: ConnName, hue: number, saturation: number, lightness: number): void {
+        return;
+    }
+
+
+    /**
      * Get DHT11 temperature (celsius or fahrenheit).
      */
     //% blockId=minode_dht_get_temperature block="dht11 %connName| tempreature %FanStatus" 

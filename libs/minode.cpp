@@ -1,7 +1,11 @@
 #include "pxt.h"
 #include "MiNode.h"
+#include <math.h>
 
 MiNode node;
+
+
+#define clip(n, lower, upper) if (n < lower) n= lower; else if (n > upper) n= upper
 
 using namespace pxt;
 namespace minode {
@@ -99,6 +103,51 @@ namespace minode {
 	    pRGB = node.rgb.attach(connName);
 	    pRGB->setRGB(red,green,blue);
 	}
+
+    //% 
+	void HSLSetColor(ConnName connName , int hue, int saturation, int lightness){
+	    MiNodeRGB* pRGB;
+        int h;
+        int s;
+        int l;
+        
+
+	    pRGB = node.rgb.attach(connName);
+        h = round(hue);
+        s = round(saturation);
+        l = round(lightness);
+        
+        h = h % 360;
+        s = clip(0, 99, s);
+        l = clip(0, 99, l);
+        int c = div((((100 - abs(2 * l - 100)) * s) << 8), 10000); //chroma, [0,255]
+        int h1 = div(h, 60);//[0,6]
+        int h2 = div((h - h1 * 60) * 256, 60);//[0,255]
+        int temp = abs((((h1 % 2) << 8) + h2) - 256);
+        int x = (c * (256 - (temp))) >> 8;//[0,255], second largest component of this color
+        int r$;
+        int g$;
+        int b$;
+        if (h1 == 0) {
+            r$ = c; g$ = x; b$ = 0;
+        } else if (h1 == 1) {
+            r$ = x; g$ = c; b$ = 0;
+        } else if (h1 == 2) {
+            r$ = 0; g$ = c; b$ = x;
+        } else if (h1 == 3) {
+            r$ = 0; g$ = x; b$ = c;
+        } else if (h1 == 4) {
+            r$ = x; g$ = 0; b$ = c;
+        } else if (h1 == 5) {
+            r$ = c; g$ = 0; b$ = x;
+        }
+        int m = div((div((l * 2 << 8), 100) - c), 2);
+        int r = r$ + m;
+        int g = g$ + m;
+        int b = b$ + m;
+	    pRGB->setRGB(r,g,b);
+	}
+
 
 	//%
   	int DHTGetTemperature(ConnName connName , DHTTemStyle style){
